@@ -1,5 +1,5 @@
-<!-- logo_main.svg -->
+<!-- logo_dev.svg -->
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
-  <rect width="200" height="80" rx="10" fill="#2b79ff"></rect>
-  <text x="100" y="50" font-size="24" fill="white" text-anchor="middle" font-family="Arial">MAIN</text>
+  <rect width="200" height="80" rx="10" fill="#ff7a59"></rect>
+  <text x="100" y="50" font-size="24" fill="white" text-anchor="middle" font-family="Arial">DEV</text>
 </svg>
