@@ -42,7 +42,7 @@ pipeline {
                 echo 'Deploying app'
 		script {
                     bat "docker rm -f ${env.BRANCH_NAME} || true"
-		    bat "docker run -d -p ${PORT}:${PORT} --name ${env.BRANCH_NAME} ${IMAGE_NAME}"
+		    bat "docker run -d --expose 3001 -p ${PORT}:3000 --name ${env.BRANCH_NAME} ${IMAGE_NAME}"
 		}
 	    }
 	}
