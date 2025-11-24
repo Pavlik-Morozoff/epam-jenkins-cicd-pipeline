@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'docker'
+    }
 
     environment {
         IMAGE_NAME = "node${env.BRANCH_NAME}:v1.0"
