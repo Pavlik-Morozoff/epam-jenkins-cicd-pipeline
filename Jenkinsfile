@@ -1,6 +1,10 @@
 pipeline {
     agent { label 'host' }
 
+    tools {
+        nodejs 'node'
+    }
+
     environment {
         IMAGE_NAME = "node${env.BRANCH_NAME}:v1.0"
 	PORT = "${env.BRANCH_NAME == 'main' ? '3000' : '3001'}"
