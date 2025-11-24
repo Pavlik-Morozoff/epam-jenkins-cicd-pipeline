@@ -1,9 +1,5 @@
 pipeline {
-    agent any
-
-    tools {
-        nodejs 'node'
-    }
+    agent { label 'host' }
 
     environment {
         IMAGE_NAME = "node${env.BRANCH_NAME}:v1.0"
