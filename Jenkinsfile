@@ -36,7 +36,7 @@ pipeline {
             steps {
                 echo 'Deploying app'
 		script {
-                    sh "docker rm -f ${env.BRANCH_NAME} || true
+                    sh "docker rm -f ${env.BRANCH_NAME} || true"
 		    sh "docker run -d -p ${PORT}:${PORT} --name ${env.BRANCH_NAME} ${IMAGE_NAME}"
 		}
 	    }
