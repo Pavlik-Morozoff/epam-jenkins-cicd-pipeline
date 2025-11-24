@@ -17,7 +17,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building app'
-		sh "npm set strict-ssl false"
 		sh "npm install"
             }
         }
