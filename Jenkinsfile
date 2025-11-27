@@ -22,28 +22,26 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building app'
-		bat "npm install"
+		sh "npm install"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing app'
-		bat "npm test"
+		sh "npm test"
             }
         }
 	stage('Build docker image') {
             steps {
                 echo 'Building Docker images'
-		bat "docker build -t ${IMAGE_NAME} ."
+		sh "docker build -t ${IMAGE_NAME} ."
 	    }
 	}
 	stage('Deploy') {
             steps {
                 echo 'Deploying app'
-		script {
-                    bat "docker rm -f ${env.BRANCH_NAME} || true"
-		    bat "docker run -d -p ${PORT}:${PORT} --name ${env.BRANCH_NAME} ${IMAGE_NAME}"
-		}
+                    sh "docker rm -f ${env.BRANCH_NAME} || true"
+		    sh "docker run -d -p ${PORT}:3000 --name ${env.BRANCH_NAME} ${IMAGE_NAME}"
 	    }
 	}
     }
